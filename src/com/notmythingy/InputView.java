@@ -24,7 +24,7 @@ public class InputView {
         Label translationLabel = new Label("Translation: ");
         TextField translationInput = new TextField();
 
-        Button addButton = new Button("Add new translation");
+        Button addButton = new Button("Add");
         addButton.setOnMouseClicked((event) -> {
             String word = wordInput.getText();
             String translation = translationInput.getText();
