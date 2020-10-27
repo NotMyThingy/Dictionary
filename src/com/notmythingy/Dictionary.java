@@ -7,23 +7,26 @@ public class Dictionary {
     private Map<String, String> translations;
 
     public Dictionary() {
-        this.translations = new HashMap<>();
+        translations = new HashMap<>();
 
-        add("sana", "word");
+        this.addNewTranslation("sana", "word");
     }
 
     public String get(String word) {
-        return this.translations.get(word);
+        return translations.get(word);
     }
 
-    public void add(String word, String translation) {
-        this.translations.put(word, translation);
+    public void addNewTranslation(String word, String translation) {
+        translations.put(word, translation);
     }
 
     public String drawWord() {
-        Random random = new Random();
-        List<String> words = new ArrayList<>(this.translations.keySet());
-        return words.get(random.nextInt(words.size()));
+
+        return new ArrayList<>(translations.keySet())
+                .get(new Random()
+                        .nextInt(translations
+                                .keySet()
+                                .size()));
     }
 
 }
